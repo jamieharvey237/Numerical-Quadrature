@@ -1,0 +1,21 @@
+# Define the right-hand side function f(x)
+def f(x):
+    return (np.pi ** 2) * np.sin(np.pi * x)
+
+# Numerical quadrature function
+def Numerical_Quadrature(e, i, quad_type, h):
+    xj = e * h
+    xj1 = (e + 1) * h
+
+    if quad_type == 1:  # Trapezoidal rule
+        if i==0:
+            return (h / 2) * (f(xj))
+        elif i==1:
+            return (h / 2) * (f(xj1))
+    elif quad_type == 2:  # Simpson's rule
+        if i==0:
+            return (h / 3) * (f(xj)+2*f((xj+xj1)/2))
+        elif i==1:
+            return (h / 3) * (f(xj1)+2*f((xj+xj1)/2))
+    else:
+        raise ValueError("Invalid quadrature type. Use 1 (Trapezoidal) or 2 (Simpson).")
