@@ -1,6 +1,6 @@
 # Define the right-hand side function f(x)
 def f(x):
-    return (np.pi ** 2) * np.sin(np.pi * x)
+    return (np.pi ** 3) * np.sin(np.pi * x)
 
 # Numerical quadrature function
 def Numerical_Quadrature(e, i, quad_type, h):
